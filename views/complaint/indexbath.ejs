@@ -2,33 +2,32 @@
 
 
 
-<div class="container d-flex flex-column justify-content-center box-color p-5 ml-1 rounded-3">
+<div class="container p-5 ml-1 rounded-3">
   <% if (sortedcomplaints.length === 0) { %>
-    <p>No complaints at the moment.</p>
+    <p class="text-center">No complaints at the moment.</p>
   <% } else { %>
-    <ul class="list-group">
+    <div class="list-group">
       <% for (let complaint of sortedcomplaints) { %>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="col-xl-2 col-xxl-2 ms-2 text-start">
+        <a href="/complaint/<%= complaint._id %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+          <div class="col-12 col-md-2 ms-2 text-start">
             <div class="fw-bold"><%= complaint.title %> </div>
           </div>
-          
-          <div class="col col-sm col-md-6 col-lg-7 col-xl-8 col-xxl-9 text-start d-none d-md-block">
+
+          <div class="col-12 col-md-6 text-start d-none d-md-block">
             <% if (complaint.description.length > 50) { %>
               <%= complaint.description.substring(0, 50) + '...' %>
             <% } else { %>
               <%= complaint.description %>
             <% } %>
           </div>
-          
-          <div class="text-end">
-            <a role="button" class="btn btn-sm bg-secondary rounded-pill" href="/complaint/<%= complaint._id %>">Open</a>
+
+          <div class="col-12 col-md-4 text-end">
+            <span class="badge bg-secondary rounded-pill">Open</span>
           </div>
-        </li>
+        </a>
       <% } %>
-    </ul>
+    </div>
   <% } %>
-</div>
 </div>
 
     

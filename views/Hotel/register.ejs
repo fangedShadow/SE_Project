@@ -1,38 +1,39 @@
 <% layout('layouts/manageBP')%>
-
-<div class="row justify-content-center mt-5">
-    <div class="col-6 box-color p-5 rounded-3">
-      <h1 class="text-center">Register</h1>
-      <div class="col-6 offset-3">
-        <form action="/managReg" method="POST" novalidate class="validated-form">
-            <div class="mb-3">
-                <label class="form-label" for="name">Name</label>
-                <input class= "form-control"type="text" name="name" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="username">Username</label>
-                <input class= "form-control"type="text" name="username" id="username" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="email">Email</label>
-                <input class= "form-control"type="email" name="email" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="hotelName">Hotel Name</label>
-              <input class="form-control" type="text" name="hotelName" id="hotelName" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="hotelAddress">Hotel Address</label>
-              <input class="form-control" type="text" name="hotelAddress" id="hotelAddress" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
-                <input class= "form-control"type="password" name="password" id="password" required>
-            </div>
-            <button class="btn btn-success">Register</button>
-        </form>
+<div class="container mt-5 mb-5">
+  <div class="col-12 col-md-8 offset-md-2">
+      <div class="row justify-content-center">
+          <div class="box-color p-4 rounded-3">
+              <h1 class="text-center mb-3">Register</h1>
+              <form action="/managReg" method="POST" novalidate class="validated-form">
+                  <div class="mb-3">
+                      <label class="form-label" for="name">Name</label>
+                      <input class="form-control" type="text" name="name" id="name" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label" for="username">Username</label>
+                      <input class="form-control" type="text" name="username" id="username" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label" for="email">Email</label>
+                      <input class="form-control" type="email" name="email" id="email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label" for="hotelName">Hotel Name</label>
+                      <input class="form-control" type="text" name="hotelName" id="hotelName" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label" for="hotelAddress">Hotel Address</label>
+                      <input class="form-control" type="text" name="hotelAddress" id="hotelAddress" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label" for="password">Password</label>
+                      <input class="form-control" type="password" name="password" id="password" required>
+                  </div>
+                  <button class="btn btn-success btn-block">Register</button>
+              </form>
+          </div>
       </div>
-    </div>
+  </div>
 </div>
 
 <script>

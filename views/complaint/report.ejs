@@ -1,49 +1,49 @@
 <% layout('layouts/boilerplate')%>
 
-<div class="h-100 col-8 offset-2 box-color p-5 ml-1 rounded-3">
-    <h1 class="text-center mb-3">Manage Report - <%=hotels.name %></h1>
-    <div class="col-6 offset-3 mt-3">
-        <form class="mb-3 mt-3" action="/complaint/generate-report" method="post">
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="startDate">Start Date:</label>
-                    <input type="date" name="startDate" required>
-                </div>
-                <div class="col">
-                    <label for="endDate">End Date:</label>
-                    <input type="date" name="endDate" required>
-                </div>
-            </div>
-            
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="General" id="flexCheckGeneral">
-                <label class="form-check-label" for="flexCheckGeneral">General</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="Housekeeping" id="flexCheckHousekeeping">
-                <label class="form-check-label" for="flexCheckHousekeeping">House Keeping</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="Content" id="flexCheckContent">
-                <label class="form-check-label" for="flexCheckContent">Content</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="Bathroom" id="flexCheckBathroom">
-                <label class="form-check-label" for="flexCheckBathroom">Bathroom</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="Maintenance" id="flexCheckMaintenance">
-                <label class="form-check-label" for="flexCheckMaintenance">Maintenance</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="complaintType[]" value="Service" id="flexCheckService">
-                <label class="form-check-label" for="flexCheckService">Service</label>
-            </div>
-            
-            <div>
-                <button class="btn btn-success color mb-3" type="submit">Generate Report</button>
-            </div>
-        </form>
+<div class="h-100 col-12 col-md-8 offset-md-2 box-color p-5 rounded-3">
+    <h1 class="text-center mb-3">Manage Report - <%= hotels.name %></h1>
+    <div class="col-12 col-md-6 offset-md-3 mt-3">
+      <form class="mb-3 mt-3" action="/complaint/generate-report" method="post">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="startDate">Start Date:</label>
+            <input class="form-control" type="date" name="startDate" required>
+          </div>
+          <div class="col">
+            <label for="endDate">End Date:</label>
+            <input class="form-control" type="date" name="endDate" required>
+          </div>
+        </div>
+  
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="General" id="flexCheckGeneral">
+          <label class="form-check-label" for="flexCheckGeneral">General</label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="Housekeeping" id="flexCheckHousekeeping">
+          <label class="form-check-label" for="flexCheckHousekeeping">House Keeping</label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="Content" id="flexCheckContent">
+          <label class="form-check-label" for="flexCheckContent">Content</label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="Bathroom" id="flexCheckBathroom">
+          <label class="form-check-label" for="flexCheckBathroom">Bathroom</label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="Maintenance" id="flexCheckMaintenance">
+          <label class="form-check-label" for="flexCheckMaintenance">Maintenance</label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="complaintType[]" value="Service" id="flexCheckService">
+          <label class="form-check-label" for="flexCheckService">Service</label>
+        </div>
+  
+        <div>
+          <button class="btn btn-success color mb-3" type="submit">Generate Report</button>
+        </div>
+      </form>
     </div>
   </div>
 

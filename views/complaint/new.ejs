@@ -19,40 +19,40 @@
   <%- include('../partials/flash')%>
 </header>
 <main class="container mt-5 mb-5">
-  <div class="h-100 col-6 offset-3 box-color p-5 ml-1 rounded-3">
-    <h1 class="text-center">New Complaint</h1>
-    <div class="col-6 offset-3">
-        <form action="/complaint" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label class="form-label" for="hotel">Hotel</label>
-            <select class= "form-control"type="hotel" name="complaint[hotel]" id="hotel" required>
-              <% for (let hotel of hotels) {%>
-                <option><%= hotel.name%></option>
-                <% }%>
-            </select> 
-          </div>
-            <div class="mb-3">
-                <label class="form-label" for="title">Title</label>
-                <input class= "form-control"type="text" name="complaint[title]" id="title" required>
-            </div>
-            <div class="mb-3">
-                <label for="image" class="form-label">Images</label>
-                <input class="form-control" name="image" type="file" id="image" multiple>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" name="complaint[description]" id="description" required></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="name">Name</label>
-              <input class= "form-control"type="text" name="complaint[source]" id="Name" <% if (user && user.length > 0) { %>value="<%= user[0].name %>"<% } %>>
-          </div>
-            <div class="mb-3">
-                <button class="btn btn-success">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
+  <div class="h-100 col-12 col-md-6 offset-md-3 box-color p-5 rounded-3">
+    <h1 class="text-center mb-4">New Complaint</h1>
+    <form action="/complaint" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label" for="hotel">Hotel</label>
+        <select class="form-control" type="hotel" name="complaint[hotel]" id="hotel" required>
+          <% for (let hotel of hotels) {%>
+            <option><%= hotel.name%></option>
+          <% }%>
+        </select> 
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input class="form-control" type="text" name="complaint[title]" id="title" required>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Images</label>
+        <input class="form-control" name="image" type="file" id="image" multiple>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea class="form-control" type="text" name="complaint[description]" id="description" required></textarea>
+      </div>
+      <% if (user) { %>
+        <div class="mb-3">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-control" type="text" name="complaint[source]" id="Name">
+        </div>
+      <% } %>
+      <div class="mb-3">
+        <button class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
 </main>
 
 <script>

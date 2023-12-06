@@ -1,22 +1,24 @@
 <% layout('layouts/manageBP')%>
 
 
-  <div class="h-100 col-6 offset-3 box-color p-5 ml-1 rounded-3">
-    <h1 class="text-center">Login</h1>
-    <div class="col-6 offset-3">
-      <form action="/managLogin" method="POST" novalidate class="validated-form">
-        <div class="mb-3">
-            <label class="form-label" for="username">Username</label>
-            <input class= "form-control"type="text" name="username" id="username" required>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input class= "form-control"type="password" name="password" id="password" required>
-        </div>
-        <button class="btn btn-success">Login</button>
-    </form>
-    </div>
+<div class="container mt-5 mb-5">
+  <div class="col-12 col-md-8 offset-md-2">
+      <div class="h-100 box-color p-4 rounded-3">
+          <h1 class="text-center mb-3">Login</h1>
+          <form action="/managLogin" method="POST" novalidate class="validated-form">
+              <div class="mb-3">
+                  <label class="form-label" for="username">Username</label>
+                  <input class="form-control" type="text" name="username" id="username" required>
+              </div>
+              <div class="mb-3">
+                  <label class="form-label" for="password">Password</label>
+                  <input class="form-control" type="password" name="password" id="password" required>
+              </div>
+              <button class="btn btn-success btn-block">Login</button>
+          </form>
+      </div>
   </div>
+</div>
 
 <script>
   (() => {

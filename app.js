@@ -179,7 +179,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/userReg', (req, res) => {
-    res.render('user/register');
+    res.render('User/register');
 })
 app.post('/userReg', catchAsync(async(req,res) => {
     try {
@@ -199,7 +199,7 @@ app.post('/userReg', catchAsync(async(req,res) => {
 }));
 
 app.get('/userLogin', (req,res) => {
-    res.render('user/login');
+    res.render('User/login');
 })
 
 app.post('/userLogin', passport.authenticate('local-user', { failureFlash: true, failureRedirect: '/userLogin' }), (req, res) => {
@@ -218,7 +218,7 @@ app.get('/userLogout', (req, res, next) => {
 
 
 app.get('/managReg', (req, res) => {
-    res.render('hotel/register');
+    res.render('Hotel/register');
 })
 app.post('/managReg', catchAsync(async(req,res) => {
     try {
@@ -242,7 +242,7 @@ app.post('/managReg', catchAsync(async(req,res) => {
 }));
 
 app.get('/managLogin', (req,res) => {
-    res.render('hotel/login');
+    res.render('Hotel/login');
 })
 
 app.post('/managLogin', passport.authenticate('local-manager', { failureFlash: true, failureRedirect: '/managLogin' }), (req, res) => {
@@ -287,11 +287,11 @@ app.get('/complaint', isLoggedInManager, catchAsync(async (req, res) => {
 }));
 
 app.get('/complaint/new', catchAsync(async(req,res) => {
-    
-    const user = await User.find({});
+    const user = req.user;
+    console.log('User Object:', user); // Log user object
     const complaints = await Complaint.find({});
     const hotels = await Hotel.find({});
-    res.render('complaint/new', {complaints, hotels, user});
+    res.render('complaint/new', { complaints, hotels, user });
 }))
 
 

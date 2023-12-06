@@ -12,16 +12,16 @@
     <% if (complaints.length === 0) { %>
       <p>No complaints at the moment.</p>
     <% } else { %>
-      <ul class="list-group">
+      <div class="list-group">
         <% for (let complaint of complaints) { %>
-          <li class="list-group-item d-flex justify-content-between align-items-start">
+          <a href="/complaint/<%= complaint._id %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
               <div class="fw-bold"><%= complaint.title %></div>
             </div>
-            <a role="button" class="btn btn-sm bg-secondary rounded-pill" href="/complaint/<%= complaint._id %>">Open</a>
-          </li>
+            <span class="badge bg-secondary rounded-pill">Open</span>
+          </a>
         <% } %>
-      </ul>
+      </div>
     <% } %>
   </div>
 </div>
