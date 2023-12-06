@@ -14,7 +14,7 @@
     <% } else { %>
       <div class="list-group">
         <% for (let complaint of complaints) { %>
-          <a href="/complaint/<%= complaint._id %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+          <a href="/complaint/<%= complaints._id %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
               <div class="fw-bold"><%= complaint.title %></div>
             </div>
