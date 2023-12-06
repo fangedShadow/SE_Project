@@ -1,0 +1,69 @@
+<% layout('layouts/userBP')%>
+<header class="mb-auto mt-3">
+  <div>
+      <nav class="nav nav-masthead justify-content-evenly float-md-right">
+        <div class="d-flex">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/complaint/new">New Complaint</a>
+        </div>      
+        <div class="d-flex">
+            <% if(!currentUser) {%>
+              <a class="nav-link" href="/userLogin">Login</a>
+              <a class="nav-link active" href="/userReg">Register</a>
+            <% } else {%>
+              <a class="nav-link" href="/userLogout">Logout</a>
+            <% } %>
+        </div>
+      </nav>
+  </div>
+</header>
+<%- include('../partials/flash')%>
+<main class="container mt-5 mb-5">
+  <div class="h-100 col-6 offset-3 box-color p-5 ml-1 rounded-3">
+    <h1 class="text-center">Register</h1>
+    <div class="col-6 offset-3">
+      <form action="/userReg" method="POST" novalidate class="validated-form">
+        <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class= "form-control"type="text" name="name" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class= "form-control"type="text" name="username" id="username" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class= "form-control"type="email" name="email" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class= "form-control"type="password" name="password" id="password" required>
+        </div>
+        <button class="btn btn-success">Register</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+<script>
+  (() => {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.validated-form')
+
+// Loop over them and prevent submission
+Array.from(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+          }
+
+        form.classList.add('was-validated')
+    }, false)
+ })
+})()
+</script>

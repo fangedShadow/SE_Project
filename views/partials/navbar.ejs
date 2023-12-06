@@ -1,0 +1,19 @@
+<header class="mb-auto mt-3">
+  <div>
+      <nav class="nav nav-masthead justify-content-evenly float-md-right">
+        <div class="d-flex">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/complaint">Processing</a>
+          <a class="nav-link" href="/complaint/dashboard">Dashboard</a>
+          <a class="nav-link" href="/complaint/report">Report</a>
+        </div>      
+        <div class="d-flex">
+            <% if(!currentUser) {%>
+              <a class="nav-link active" href="/managLogin">Login</a>
+            <% } else {%>
+              <a class="nav-link" href="/managLogout">Logout</a>
+            <% } %>
+        </div>
+      </nav>
+  </div>
+</header>

@@ -1,0 +1,83 @@
+<% layout('layouts/userBP')%>
+<header class="mb-auto mt-3">
+  <div>
+      <nav class="nav nav-masthead justify-content-evenly float-md-right">
+        <div class="d-flex">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link active" href="/complaint/new">New Complaint</a>
+        </div>      
+        <div class="d-flex">
+            <% if(!currentUser) {%>
+              <a class="nav-link" href="/userLogin">Login</a>
+              <a class="nav-link" href="/userReg">Register</a>
+            <% } else {%>
+              <a class="nav-link" href="/userLogout">Logout</a>
+            <% } %>
+        </div>
+      </nav>
+  </div>
+  <%- include('../partials/flash')%>
+</header>
+<main class="container mt-5 mb-5">
+  <div class="h-100 col-6 offset-3 box-color p-5 ml-1 rounded-3">
+    <h1 class="text-center">New Complaint</h1>
+    <div class="col-6 offset-3">
+        <form action="/complaint" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label class="form-label" for="hotel">Hotel</label>
+            <select class= "form-control"type="hotel" name="complaint[hotel]" id="hotel" required>
+              <% for (let hotel of hotels) {%>
+                <option><%= hotel.name%></option>
+                <% }%>
+            </select> 
+          </div>
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class= "form-control"type="text" name="complaint[title]" id="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Images</label>
+                <input class="form-control" name="image" type="file" id="image" multiple>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="complaint[description]" id="description" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="name">Name</label>
+              <input class= "form-control"type="text" name="complaint[source]" id="Name" <% if (user && user.length > 0) { %>value="<%= user[0].name %>"<% } %>>
+          </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+
+<script>
+    (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.validated-form')
+
+  // Loop over them and prevent submission
+  Array.from(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+          form.classList.add('was-validated')
+      }, false)
+   })
+})()
+</script>
+
+
+
+
+    

@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate')%>
+
+
+
+<div class="container d-flex flex-column justify-content-center box-color p-5 ml-1 rounded-3">
+  <h1 class="text-center">New Complaints</h1>
+  <div class="">
+    <form action="" method="POST">
+      <button class="btn btn-success" id="sort">Sort</button>
+    </form>
+    <a href=""></a>
+    <% if (complaints.length === 0) { %>
+      <p>No complaints at the moment.</p>
+    <% } else { %>
+      <ul class="list-group">
+        <% for (let complaint of complaints) { %>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><%= complaint.title %></div>
+            </div>
+            <a role="button" class="btn btn-sm bg-secondary rounded-pill" href="/complaint/<%= complaint._id %>">Open</a>
+          </li>
+        <% } %>
+      </ul>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Add an event listener to the Sort button
+    document.getElementById("sort").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+      
+      // Make an asynchronous request to your server using fetch
+      fetch('https://eboyar.pythonanywhere.com/categorize', {
+        method: 'POST'
+      })
+      .then(response => {
+        // Check if the request was successful (status code 200)
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // You can add further processing here if needed
+        console.log('Command executed successfully');
+      })
+      .catch(error => {
+        // Handle errors during the fetch
+        console.error('There was a problem with the fetch operation:', error);
+      });
+    });
+  });
+  </script>
+    

@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate')%>
+
+
+
+
+
+<div class="container d-flex flex-column justify-content-center box-color p-5 ml-1 rounded-3">
+  <h1 class="text-center">Dashboard - <%= hotels.name %></h1>
+  <div>
+    <nav class="nav nav-masthead justify-content-center float-md-right" id="complaintTabs">
+      <a class="nav-link active tab" aria-current="page" href="#" data-tab="houseKeepIssue">General</a>
+      <a class="nav-link tab" href="#" data-tab="generalIssue">House Keeping</a>
+      <a class="nav-link tab" href="#" data-tab="contentIssue">Content</a>
+      <a class="nav-link tab" href="#" data-tab="bathIssue">Bathroom</a>
+      <a class="nav-link tab" href="#" data-tab="maintenIssue">Maintenance</a>
+      <a class="nav-link tab" href="#" data-tab="serIssue">Service</a>
+    </nav>
+    <div class="tab-content" id="complaintContent">
+      <!-- Content for each tab will be dynamically loaded here -->
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const complaintTabs = document.getElementById('complaintTabs');
+  const complaintContent = document.getElementById('complaintContent');
+
+  // Activate the first tab by default
+  const defaultTab = document.querySelector('#complaintTabs .nav-link');
+  defaultTab.classList.add('active');
+
+  // Load content for the default tab
+  const defaultTabId = defaultTab.getAttribute('data-tab');
+  loadTabContent(defaultTabId);
+
+  complaintTabs.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (event.target.tagName === 'A') {
+      // Remove 'active' class from all tabs
+      document.querySelectorAll('#complaintTabs .nav-link').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Add 'active' class to the clicked tab
+      event.target.classList.add('active');
+
+      const tabId = event.target.getAttribute('data-tab');
+      loadTabContent(tabId);
+    }
+  });
+
+  function loadTabContent(tabId) {
+    // You can fetch content dynamically based on the tabId using AJAX or
+    // you can define the content locally and update the complaintContent.innerHTML.
+
+    // Example: Fetching content using AJAX
+    fetch(`/complaint/dashboard/${tabId}`)
+      .then(response => response.text())
+      .then(data => {
+        complaintContent.innerHTML = data;
+      })
+      .catch(error => console.error('Error fetching content:', error));
+
+    // Example: Defining content locally
+    /*
+    const contentMap = {
+      bathIssue: '<p>Content for Bathroom issues</p>',
+      bedIssue: '<p>Content for Bedroom issues</p>',
+      elecIssue: '<p>Content for Electrical issues</p>',
+      rsIssue: '<p>Content for Room Service issues</p>',
+    };
+
+    complaintContent.innerHTML = contentMap[tabId];
+    */
+  }
+});
+</script>
+
+
+
+
+
