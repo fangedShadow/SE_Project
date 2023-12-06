@@ -369,7 +369,6 @@ app.post('/complaint/generate-report', isLoggedInManager, catchAsync(async(req, 
         const hotelName = hotels.name;
         const startDate = req.body.startDate;
         const endDate = req.body.endDate;
-        console.log('Request Body:', req.body);
 
         // Initialize counts for each label type
         let generalCount = 0;
@@ -384,25 +383,24 @@ app.post('/complaint/generate-report', isLoggedInManager, catchAsync(async(req, 
         if (req.body.complaintType.includes('General')) {
             const generalLabels = ["temperature", "insects", "noise", "rodent", "smells", "mold"];
             generalCount = await SortedComplaint.countDocuments({ hotel: hotelName, date: { $gte: startDate, $lte: endDate }, label: { $in: generalLabels } });
-            console.log('General Count:', generalCount);
         }
 
         if (req.body.complaintType.includes('Housekeeping')) {
             const housekeepingLabels = ["cleanliness", "dirty floor", "stains", "wet floor"];
             housekeepingCount = await SortedComplaint.countDocuments({ hotel: hotelName, date: { $gte: startDate, $lte: endDate }, label: { $in: housekeepingLabels } });
-            console.log('house Count:', housekeepingCount);
+           
         }
 
         if (req.body.complaintType.includes('Content')) {
             const contentLabels = ["content", "bed", "fridge", "towels", "television", "safe"];
             contentCount = await SortedComplaint.countDocuments({ hotel: hotelName, date: { $gte: startDate, $lte: endDate }, label: { $in: contentLabels } });
-            console.log('content Count:', contentCount);
+          
         }
 
         if (req.body.complaintType.includes('Bathroom')) {
             const bathroomLabels = ["bathroom", "dirty water", "toiletries", "water temperature"];
             bathroomCount = await SortedComplaint.countDocuments({ hotel: hotelName, date: { $gte: startDate, $lte: endDate }, label: { $in: bathroomLabels } });
-            console.log('bath Count:', bathroomCount);
+       
         }
 
         if (req.body.complaintType.includes('Maintenance')) {
@@ -424,7 +422,6 @@ app.post('/complaint/generate-report', isLoggedInManager, catchAsync(async(req, 
             Maintenance: maintenanceCount,
             Service: serviceCount
         };
-        console.log('Label Counts:', labelCounts);
 
         // Generate PDF using pdfkit
         const pdfBuffer = await generatePdf(startDate, endDate, labelCounts, req.user.name, hotelName);
@@ -450,7 +447,7 @@ app.get('/complaint/dashboard', isLoggedInManager, catchAsync(async (req, res) =
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+
 
     // Fetch only the complaints associated with the manager's hotel
     const sortedComplaints = await SortedComplaint.find({ hotel: hotels.name });
@@ -471,7 +468,7 @@ app.get('/complaint/dashboard/bathIssue', isLoggedInManager, catchAsync(async (r
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+   
 
     // Define the labels you want to filter
     const desiredLabels = ["bathroom", "dirty water", "toiletries", "water temperature"];
@@ -498,7 +495,7 @@ app.get('/complaint/dashboard/contentIssue', isLoggedInManager, catchAsync(async
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+    
 
     // Define the labels you want to filter
     const desiredLabels = ["content", "bed", "fridge", "towels", "television", "safe"];
@@ -525,7 +522,7 @@ app.get('/complaint/dashboard/generalIssue', isLoggedInManager, catchAsync(async
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+
 
     // Define the labels you want to filter
     const desiredLabels = ["temperature", "insects", "noise", "rodent", "smells" , "mold" ];
@@ -552,7 +549,7 @@ app.get('/complaint/dashboard/houseKeepIssue', isLoggedInManager, catchAsync(asy
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+
 
     // Define the labels you want to filter
     const desiredLabels = ["cleanliness", "dirty floor", "stains", "wet floor"];
@@ -579,7 +576,7 @@ app.get('/complaint/dashboard/maintenIssue', isLoggedInManager, catchAsync(async
         return res.status(404).send('Hotel not found');
     }
 
-    console.log('Manager Hotel:', hotels.name);
+
 
     // Define the labels you want to filter
     const desiredLabels = ["maintenance", "leak", "lights"];
@@ -606,7 +603,7 @@ app.get('/complaint/dashboard/serIssue', isLoggedInManager, catchAsync(async (re
          return res.status(404).send('Hotel not found');
      }
  
-     console.log('Manager Hotel:', hotels.name);
+
  
      // Define the labels you want to filter
      const desiredLabels = ["charges", "room service", "staff"];
