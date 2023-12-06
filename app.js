@@ -455,7 +455,7 @@ app.get('/complaint/dashboard', isLoggedInManager, catchAsync(async (req, res) =
     // Fetch only the complaints associated with the manager's hotel
     const sortedComplaints = await SortedComplaint.find({ hotel: hotels.name });
 
-    res.render('complaint/sortedindex', { sortedComplaints, hotels });
+    res.render('complaint/sortedIndex', { sortedComplaints, hotels });
 }));
 
 app.get('/complaint/dashboard/bathIssue', isLoggedInManager, catchAsync(async (req, res) => {
