@@ -634,11 +634,18 @@ app.get('/complaint/:id', isLoggedInManager, catchAsync(async (req, res) => {
     res.render('complaint/show', {sortedcomplaint});
 }));
 
-app.delete('/complaint/:id', isLoggedInManager, catchAsync(async (req,res) => {
+app.delete('/complaint/:id', isLoggedInManager, catchAsync(async (req, res) => {
     const { id } = req.params;
-    await sortedComplaintComplaint.findByIdAndDelete(id);
-    req.flash('success', "Complaint Deleted")
-    res.redirect('/complaint');
+
+    try {
+        await SortedComplaint.findByIdAndDelete(id);
+        req.flash('success', 'Complaint Deleted');
+        return res.redirect('/complaint/dashboard'); // Update the redirect path
+    } catch (error) {
+        console.error('Error deleting complaint:', error);
+        req.flash('error', 'Error deleting complaint');
+        return res.redirect('/complaint');
+    }
 }));
 
 
