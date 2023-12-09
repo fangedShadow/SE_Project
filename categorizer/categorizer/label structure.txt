@@ -1,0 +1,38 @@
+HOUSEKEEPING
+cleanliness.txt 
+dirty floor.txt 
+stains.txt
+wet floor.txt
+
+GENERAL
+temperature.txt     
+insects.txt    
+noise.txt       
+rodent.txt
+smells.txt      
+mold.txt   
+
+CONTENT
+content.txt 
+bed.txt
+fridge.txt 
+towels.txt
+television.txt
+safe.txt
+wifi.txt  
+
+BATHROOM
+bathroom.txt  
+dirty water.txt 
+toiletries.txt
+water temperature.txt
+
+MAINTENANCE
+maintenance.txt 
+leak.txt        
+lights.txt
+   
+SERVICE
+charges.txt  
+room service.txt
+staff.txt

@@ -1,0 +1,70 @@
+The hotel WiFi connection is excruciatingly slow, making basic browsing a challenge.
+Unfortunately, the WiFi signal in my room is consistently weak, leading to frequent disconnections.
+The hotel WiFi doesn't work at all, leaving guests without any internet access.
+Regrettably, the WiFi in the lobby area is too slow for even basic tasks like checking emails.
+The WiFi restricts access to certain websites, limiting its usability for guests.
+Unfortunately, the WiFi speed varies drastically throughout the day, making it unpredictable.
+The WiFi is not accessible in certain areas of the hotel, such as the pool or beach.
+Regrettably, the hotel WiFi keeps dropping, causing interruptions during video calls.
+The hotel WiFi login process is excessively complicated and time-consuming.
+Unfortunately, the WiFi signal in the conference rooms is insufficient for business meetings.
+The hotel WiFi's security measures cause constant login issues for guests.
+Regrettably, the hotel WiFi has a data cap, restricting usage for guests with extensive needs.
+The WiFi speed in the evening is significantly slower, impacting streaming services.
+Unfortunately, the hotel WiFi's password keeps changing, causing inconvenience.
+The WiFi in the dining area is too slow, affecting guests trying to access menus online.
+The hotel WiFi's connectivity is sporadic, making it unreliable for work purposes.
+Regrettably, the WiFi signal weakens during peak hours, affecting connectivity.
+The hotel WiFi only allows a limited number of devices to connect per room.
+Unfortunately, the WiFi signal doesn't reach the higher floors, causing connectivity issues.
+The hotel WiFi blocks essential services like VPNs, hindering business travelers.
+The WiFi speed fluctuates, making it challenging to download or upload files consistently.
+Regrettably, the WiFi's coverage in public areas like the gym is insufficient.
+The hotel WiFi constantly prompts for reauthentication, disrupting usage.
+Unfortunately, the WiFi signal is disrupted by nearby electronic devices, affecting connectivity.
+The hotel WiFi's login page doesn't load properly, preventing access to the network.
+The WiFi in the rooms has limited bandwidth, causing slowdowns during busy times.
+Regrettably, the hotel WiFi's signal strength weakens in the evenings, affecting usage.
+The WiFi restricts access to social media platforms, limiting guests' connectivity.
+Unfortunately, the WiFi's latency is consistently high, affecting online gaming experiences.
+The hotel WiFi doesn't support multiple devices connected simultaneously.
+The WiFi in the rooms disconnects frequently, requiring constant reconnection.
+Regrettably, the hotel WiFi's support team takes too long to address connectivity issues.
+The hotel WiFi's network name doesn’t appear consistently, causing confusion.
+Unfortunately, the WiFi signal is disrupted by neighboring networks, causing interference.
+The hotel WiFi doesn't reach the outdoor seating areas, limiting guest accessibility.
+The WiFi login requires personal information, raising privacy concerns for guests.
+Regrettably, the hotel WiFi's speed drops significantly during evenings and weekends.
+The hotel WiFi's bandwidth is insufficient for video conferencing, affecting business travelers.
+Unfortunately, the WiFi doesn't support streaming services due to bandwidth limitations.
+The hotel WiFi restricts access to streaming platforms, limiting entertainment options.
+The WiFi's signal strength fluctuates drastically, leading to unpredictable connectivity.
+Regrettably, the hotel WiFi's signal interferes with electronic devices, causing disruptions.
+The WiFi signal in the rooms weakens during certain hours, affecting browsing speeds.
+The hotel WiFi disconnects frequently, making it inconvenient for ongoing tasks.
+Unfortunately, the WiFi in the lounge areas is too slow for guests trying to work remotely.
+The hotel internet connection is excruciatingly slow, making basic browsing a challenge.
+Unfortunately, the internet in my room is consistently weak, leading to frequent disconnections.
+The hotel internet doesn't work at all, leaving guests without any access.
+Regrettably, the internet in the lobby area is too slow for even basic tasks like checking emails.
+The internet restricts access to certain websites, limiting its usability for guests.
+Unfortunately, the internet speed varies drastically throughout the day, making it unpredictable.
+The internet is not accessible in certain areas of the hotel, such as the pool or beach.
+Regrettably, the hotel internet keeps dropping, causing interruptions during video calls.
+The hotel internet login process is excessively complicated and time-consuming.
+Unfortunately, the internet signal in the conference rooms is insufficient for business meetings.
+The hotel internet's security measures cause constant login issues for guests.
+Regrettably, the hotel internet has a data cap, restricting usage for guests with extensive needs.
+The internet speed in the evening is significantly slower, impacting streaming services.
+Unfortunately, the hotel internet's password keeps changing, causing inconvenience.
+The internet in the dining area is too slow, affecting guests trying to access menus online.
+The hotel internet's connectivity is sporadic, making it unreliable for work purposes.
+Regrettably, the internet signal weakens during peak hours, affecting connectivity.
+The hotel internet only allows a limited number of devices to connect per room.
+Unfortunately, the internet signal doesn't reach the higher floors, causing connectivity issues.
+The hotel internet blocks essential services like VPNs, hindering business travelers.
+The internet speed fluctuates, making it challenging to download or upload files consistently.
+Regrettably, the hotel internet's coverage in public areas like the gym is insufficient.
+The hotel internet constantly prompts for reauthentication, disrupting usage.
+Unfortunately, the internet signal is disrupted by nearby electronic devices, affecting connectivity.
+The hotel internet's login page doesn’t load properly, preventing access to the network.
